@@ -18,8 +18,16 @@
         // Split the string into an array of URLs
         var urlArray = sessionUrls.split(",");
 
-        // Open each URL in a new tab
+        var newArray = []
+        // Filter chrome urls
         urlArray.forEach(function(url) {
+            if(!url.startsWith("chrome:")){
+                newArray.push(url);
+            }
+        });
+
+        // Open each URL in a new tab
+        newArray.forEach(function(url) {
             window.open(url, "_blank");
         });
     </script>
