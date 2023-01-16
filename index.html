@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Session</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        // Get the current URL
+        var currentUrl = new URL(window.location);
+
+        // Get the sessionUrls parameter
+        var sessionUrls = currentUrl.searchParams.get("sessionUrls");
+
+        // Decode the sessionUrls value
+        sessionUrls = decodeURIComponent(sessionUrls);
+
+        // Split the string into an array of URLs
+        var urlArray = sessionUrls.split(",");
+
+        // Open each URL in a new tab
+        urlArray.forEach(function(url) {
+            window.open(url, "_blank");
+        });
+    </script>
+</body>
+</html>
